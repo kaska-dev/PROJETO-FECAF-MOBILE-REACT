@@ -1,28 +1,26 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { useState } from "react";
+import { Text, TextInput, View } from "react-native";
+import { ButtonCustom } from "../../components/button-custom/button-custom";
+import { styles } from "./styles";
 
 export const Home = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
-    <View style={stylesText.container1}>
-      <Text>Olá mundo</Text>
-      <TextInput style={stylesInput.container2} />
+    <View style={styles.container}>
+      <Text style={styles.titleInput}>E-mail</Text>
+      <TextInput 
+          style={styles.styleInput}
+          onChangeText={setEmail}
+          value={email}
+      />
+      <Text style={styles.titleInput}>Senha</Text>
+      <TextInput 
+          style={styles.styleInput}
+          onChangeText={setPassword}
+          value={password}
+      />
+      <ButtonCustom/>
     </View>
   );
 };
-
-const stylesText = StyleSheet.create({
-  container1: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
-
-const stylesInput = StyleSheet.create({
-  container2: {
-    height: 52,
-    width: "90%",
-    borderWidth: 1,
-    borderColor: "#000",
-  },
-});
