@@ -22,5 +22,9 @@ export const styles = StyleSheet.create({
     width: '90%',
     marginBottom: 5,
     marginTop: 10
+  },
+  styleImage: {
+    height: 150,
+    width: 340
   }
 });
