@@ -1,11 +1,18 @@
-import { router } from 'expo-router'
-import { Text, TouchableOpacity } from 'react-native'
-import { styles } from './styles'
+import { router } from 'expo-router';
+import { Text, TouchableOpacity } from 'react-native';
+import { styles } from './styles';
 
-export const ButtonCustom = () => {
+export const ButtonCustom = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={() => router.navigate('/first-page')} style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text style={styles.titleButton}>Login</Text>
+    </TouchableOpacity>
+  )
+}
+export const ButtonReturn = () => {
+  return (
+    <TouchableOpacity onPress={() => router.navigate('/_sitemap')} style={styles.container}>
+      <Text style={styles.titleButton}>Return</Text>
     </TouchableOpacity>
   )
 }
