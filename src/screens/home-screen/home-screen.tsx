@@ -1,14 +1,15 @@
 import { router } from 'expo-router';
 import { useState } from "react";
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
-import LogoReactApp from '../../../src/assets/newLogo.png';
+import {Text, TextInput, View } from "react-native";
 import { ButtonCustom } from "../../components/button-custom/button-custom";
 import { styles } from "./styles";
+import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 export const Home = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: '', password: '' })
+
 
   // Validação dos campos de Login
   const validate = () => {
@@ -16,11 +17,11 @@ export const Home = () => {
     const errors = { email: '', password: '' };
 
     if (!email) {
-      errors.email = "É obrigatório preencher o email."
+      errors.email = "Campo Obrigatório"
       isValid = false;
     }
     if (!password) {
-      errors.password = "É obrigatório preencher a senha."
+      errors.password = "Campo Obrigatório"
       isValid = false;
     }
     setErrors(errors)
@@ -35,14 +36,12 @@ export const Home = () => {
     }
   }
   return (
-    <ScrollView>
       <View style={styles.container}>
-        <Image
-          source={LogoReactApp}
-          style={styles.styleImage}
-          resizeMode='contain'
-        />
-        <Text style={styles.titleInput}>E-mail</Text>
+        <View style={styles.divUp}>
+          <Text style={styles.styleTitle}>Bem-vindo de volta!</Text>
+          <Text style={styles.styleParagraf}>Insira seus dados para entrar na sua conta.</Text>
+        <View style={styles.styleGroup}>
+        <Text style={styles.titleInput}>Username</Text>
         <TextInput
           style={styles.styleInput}
           value={email}
@@ -50,7 +49,10 @@ export const Home = () => {
         />
         {/* Se o campo email estiver vazio, aparecerá uma mensagem em vermelho */}
         {errors.email ? (
-          <Text style={{ color: 'red' }}>{errors.email}</Text>
+          <Text style={{ color: 'red', width: "90%"}}> 
+          <Icon name="error-outline" size={15} color="red"/>
+          {errors.email} 
+          </Text>
         ) : null}
 
         <Text style={styles.titleInput}>Senha</Text>
@@ -58,14 +60,20 @@ export const Home = () => {
           style={styles.styleInput}
           onChangeText={setPassword}
           value={password}
+          secureTextEntry={true} 
         />
+  
+        
         {/* Se o campo email estiver vazio, aparecerá uma mensagem em vermelho */}
         {errors.password ? (
-          <Text style={{ color: 'red' }}>{errors.password}</Text>
+          <Text style={{ color: 'red', width: "90%"}}> 
+          <Icon name="error-outline" size={15} color="red"/>
+          {errors.password} </Text>
+          
         ) : null}
-
         <ButtonCustom onPress={handleSubmit} />
+        </View>
       </View>
-    </ScrollView>
+   </View>
   );
 };

@@ -6,7 +6,6 @@ export const FirstPage = () => {
   return (
     <View style={styles.container}>
       <Text>Olá</Text>
-      <ButtonReturn />
     </View>
   )
 }
