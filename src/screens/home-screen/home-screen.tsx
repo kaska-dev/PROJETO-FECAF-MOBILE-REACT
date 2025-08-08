@@ -43,33 +43,31 @@ export const Home = () => {
         <View style={styles.styleGroup}>
         <Text style={styles.titleInput}>Username</Text>
         <TextInput
-          style={styles.styleInput}
+          style={[styles.styleInput, errors.email && {borderColor: "red", borderWidth: 3}]}
           value={email}
           onChangeText={setEmail}
         />
         {/* Se o campo email estiver vazio, aparecerá uma mensagem em vermelho */}
         {errors.email ? (
-          <Text style={{ color: 'red', width: "90%"}}> 
-          <Icon name="error-outline" size={15} color="red"/>
+          <Text style={styles.errorLine}> 
+          <Icon name="error-outline"style={styles.iconError}/>
           {errors.email} 
           </Text>
         ) : null}
 
         <Text style={styles.titleInput}>Senha</Text>
         <TextInput
-          style={styles.styleInput}
+          style={[styles.styleInput, errors.email && {borderColor: "red", borderWidth: 3}]}
           onChangeText={setPassword}
           value={password}
-          secureTextEntry={true} 
+          secureTextEntry={true}
         />
-  
-        
+
         {/* Se o campo email estiver vazio, aparecerá uma mensagem em vermelho */}
         {errors.password ? (
-          <Text style={{ color: 'red', width: "90%"}}> 
-          <Icon name="error-outline" size={15} color="red"/>
+          <Text style={styles.errorLine}> 
+          <Icon name="error-outline"style={styles.iconError}/>
           {errors.password} </Text>
-          
         ) : null}
         <ButtonCustom onPress={handleSubmit} />
         </View>

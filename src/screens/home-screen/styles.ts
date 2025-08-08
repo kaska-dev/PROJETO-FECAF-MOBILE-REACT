@@ -56,5 +56,14 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  errorLine: {
+    color: 'red',
+    width: '90%',
+  },
+  iconError: {
+    margin: 10,
+    color: 'red',
+    fontSize: 15
+  }
 });
 
