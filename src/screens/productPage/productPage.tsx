@@ -28,7 +28,6 @@ export default function ProductPage() {
 
   return (
     <View style={styles.container}>
-      {/* Abas */}
       <View style={styles.tabsRow}>
         <Pressable style={[styles.tab, tab === 'M' && styles.tabActive]} onPress={() => setTab('M')}>
           <Text style={styles.tabLabel}>Produtos Masculinos</Text>
@@ -40,10 +39,8 @@ export default function ProductPage() {
 
       <FlatList
         data={data}
-        keyExtractor={(item) => String(item.id)}
         numColumns={2}
         contentContainerStyle={styles.list}
-        columnWrapperStyle={styles.columnWrap}
         renderItem={({ item }) => (
           <View style={styles.cell}>
             <ProductCard item={item} />

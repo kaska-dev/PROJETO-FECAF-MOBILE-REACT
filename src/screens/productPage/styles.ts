@@ -32,8 +32,7 @@ tabLabel: {
 columnWrap: { 
   justifyContent: 'space-between' 
 },
-cell: {
-   flex: 1, 
+cell: { 
    alignItems: 'center'
 },
 
