@@ -8,10 +8,9 @@ const port = 3001
 app.use(cors())
 app.use(express.json())
 
-app.get('/produtos/:categoria', async (req, res) => {
-  const { categoria } = req.params
+app.get('/produtos/category/mens-shoes', async (req, res) => {
   try {
-    const {data} = await axios.get(`https://dummyjson.com/products/category/${encodeURIComponent(categoria)}`);
+    const {data} = await axios.get("https://dummyjson.com/products/category/mens-shoes");
     res.json(data)
   } catch (err) {
     console.error("Erro ao buscar produtos", err.message)
