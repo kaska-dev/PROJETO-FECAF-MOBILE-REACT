@@ -32,7 +32,7 @@ export const Login = () => {
   const handleSubmit = () => {
     if (validate()) {
       console.log("O login foi feito!", { email, password })
-      router.replace('/(tabs)/products');
+      router.replace('/products/home');
     }
   }
   return (
