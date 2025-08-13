@@ -9,7 +9,6 @@ export default function ProductPage() {
   const [men, setMen] = useState([]);
   const [women, setWomen] = useState([]);
 
-  // carrega masculino ao abrir
   useEffect(() => {
     (async () => {
       const m = await fetch('https://dummyjson.com/products/category/mens-shoes').then(r => r.json());
@@ -17,7 +16,6 @@ export default function ProductPage() {
     })();
   }, []);
 
-  // quando trocar para feminino, baixa se ainda não baixou
   useEffect(() => {
     if (tab !== 'F' || women.length) return;
     (async () => {

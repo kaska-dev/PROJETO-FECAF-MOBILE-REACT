@@ -32,7 +32,7 @@ export const Login = () => {
   const handleSubmit = () => {
     if (validate()) {
       console.log("O login foi feito!", { email, password })
-      router.replace("/products")
+      router.replace('/(tabs)/products');
     }
   }
   return (
@@ -57,7 +57,7 @@ export const Login = () => {
 
           <Text style={styles.titleInput}>Senha</Text>
           <TextInput
-            style={[styles.styleInput, errors.email && { borderColor: "red", borderWidth: 3 }]}
+            style={[styles.styleInput, errors.password && { borderColor: "red", borderWidth: 3 }]}
             onChangeText={setPassword}
             value={password}
             secureTextEntry={true}
