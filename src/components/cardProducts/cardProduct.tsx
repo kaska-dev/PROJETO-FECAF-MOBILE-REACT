@@ -1,12 +1,16 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 
-export default function ProductCard({ item }) {
+export default function ProductCard({ item, onPress }) {
 
   const valueProduct = Number(item.price) * (1 - Number(item.discountPercentage) / 100);
 
   return (
-    <TouchableOpacity activeOpacity={0.85} style={styles.card}>
+    <TouchableOpacity
+      activeOpacity={0.85}
+      style={styles.card}
+      onPress={onPress}
+    >
       {item.thumbnail ? (
         <Image source={{ uri: item.thumbnail }} style={styles.thumb} resizeMode="cover" />
       ) : (
