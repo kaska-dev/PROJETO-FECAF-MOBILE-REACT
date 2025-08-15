@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+📱 PROJETO FECAF MOBILE (React Native + Expo)
+📋 Descrição
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto é um aplicativo móvel desenvolvido em React Native utilizando o Expo e Expo Router para navegação.
+Ele foi criado como parte do projeto FECAF, integrando funcionalidades como autenticação e listagem de produtos.
+A aplicação segue uma arquitetura modular, separando rotas públicas (login) e rotas autenticadas.
 
-## Get started
+🚀 Tecnologias Utilizadas
 
-1. Install dependencies
+React Native 0.79.5
 
-   ```bash
-   npm install
-   ```
+Expo ~53.0.20
 
-2. Start the app
+Expo Router ~5.1.4
 
-   ```bash
-   npx expo start
-   ```
+React Navigation (bottom-tabs, native, elements)
 
-In the output, you'll find options to open the app in a
+Axios para chamadas HTTP
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Async Storage para armazenamento local
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+React Native WebView
 
-## Get a fresh project
+Express (possivelmente para backend embutido ou integração local)
 
-When you're ready, run:
+React Icons & Vector Icons
 
-```bash
-npm run reset-project
-```
+Expo Haptics, Blur, Fonts, StatusBar, Web Browser e outras libs de UI
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📂 Estrutura de Pastas
+app/
+ ├── _layout.tsx              # Layout global
+ ├── (auth)/                  # Rotas públicas
+ │    ├── _layout.tsx
+ │    └── login.tsx
+ ├── (app)/                   # Rotas privadas
+ │    ├── products/
+ │    │     ├── _layout.tsx
+ │    │     ├── home.tsx
+ │    │     └── configuracoes.tsx
+assets/
+ └── images/                  # Ícones e imagens
 
-## Learn more
+⚙️ Scripts Disponíveis
+Comando	Descrição
+npm start	Inicia o projeto no modo Expo
+npm run android	Inicia no emulador/dispositivo Android
+npm run ios	Inicia no simulador iOS
+npm run web	Executa no navegador
+npm run lint	Executa verificação de código
+npm run reset-project	Reseta o projeto para estado inicial
+🔧 Como Rodar o Projeto
 
-To learn more about developing your project with Expo, look at the following resources:
+Clonar o repositório
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+git clone <url-do-repositorio>
+cd PROJETO-FECAF-MOBILE-REACT
 
-## Join the community
 
-Join our community of developers creating universal apps.
+Instalar dependências
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+npm install
+
+
+Executar no Expo
+
+npm start
+
+
+Executar no Android/iOS/Web
+
+npm run android
+npm run ios
+npm run web
+
+📌 Funcionalidades Principais
+
+Login de usuário
+
+Navegação com abas
+
+Listagem de produtos
+
+Integração com API via Axios
+
+Armazenamento local com AsyncStorage
+
+Suporte multiplataforma (Android, iOS e Web)
+
+🛠 Requisitos
+
+Node.js >= 18
+
+Expo CLI
+Instalar globalmente:
+
+npm install -g expo-cli
